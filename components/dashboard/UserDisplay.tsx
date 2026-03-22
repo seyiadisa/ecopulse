@@ -7,7 +7,7 @@ export default function UserDisplay() {
 
   if (!isLoaded) {
     return (
-      <div className="animate-pulse size-7 rounded-full border bg-gray-400"></div>
+      <div className="animate-pulse size-7 rounded-full border bg-muted"></div>
     );
   }
 

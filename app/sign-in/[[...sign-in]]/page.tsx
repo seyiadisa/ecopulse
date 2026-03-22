@@ -6,28 +6,28 @@ export default function SignInPage() {
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4">
       <div className="flex items-center gap-2.5 mb-8">
         <Logo />
-        <span className="text-xl font-semibold text-white">EcoPulse</span>
+        <span className="text-xl font-semibold text-foreground">EcoPulse</span>
       </div>
 
       <SignIn
         appearance={{
           elements: {
             rootBox: 'w-full max-w-md',
-            card: 'bg-card border border-white/10 shadow-2xl rounded-2xl',
-            headerTitle: 'text-white',
-            headerSubtitle: 'text-gray-400',
+            card: 'bg-card border border-border shadow-2xl rounded-2xl',
+            headerTitle: 'text-foreground',
+            headerSubtitle: 'text-muted',
             socialButtonsBlockButton:
-              'bg-neutral-900 border border-white/10 text-white hover:bg-neutral-800',
-            dividerLine: 'bg-white/10',
-            dividerText: 'text-gray-500',
-            formFieldLabel: 'text-gray-300',
+              'bg-card border border-border text-foreground hover:bg-foreground/5',
+            dividerLine: 'bg-border/60',
+            dividerText: 'text-muted',
+            formFieldLabel: 'text-muted',
             formFieldInput:
-              'bg-neutral-900 border-white/10 text-white focus:border-primary/50',
+              'bg-card border border-border text-foreground focus:border-primary/50',
             formButtonPrimary:
-              'bg-primary hover:bg-primary-dark text-black font-semibold',
+              'bg-primary hover:bg-primary-dark text-primary-foreground font-semibold',
             footerActionLink: 'text-primary hover:text-primary-dark',
-            identityPreviewText: 'text-gray-300',
-            identityPreviewEditButtonIcon: 'text-gray-400',
+            identityPreviewText: 'text-foreground/80',
+            identityPreviewEditButtonIcon: 'text-muted',
           },
         }}
       />

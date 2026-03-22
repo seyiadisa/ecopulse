@@ -10,6 +10,11 @@
   --card-border: rgba(10, 10, 10, 0.08);
   --primary: #10d97a;
   --primary-dark: #0bb865;
+  --primary-foreground: #0a0a0a;
+  --warning: #f59e0b;
+  --attention: #f97316;
+  --danger: #ef4444;
+  --scrim: rgba(0, 0, 0, 0.6);
   --muted: #6b7280;
   --sidebar: #f3f4f6;
 }
@@ -21,6 +26,11 @@
   --card-border: rgba(255, 255, 255, 0.08);
   --primary: #10d97a;
   --primary-dark: #0bb865;
+  --primary-foreground: #0a0a0a;
+  --warning: #f59e0b;
+  --attention: #f97316;
+  --danger: #ef4444;
+  --scrim: rgba(0, 0, 0, 0.6);
   --muted: #9ca3af;
   --sidebar: #0d0d0d;
 }
@@ -30,7 +40,13 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-warning: var(--warning);
+  --color-attention: var(--attention);
+  --color-danger: var(--danger);
+  --color-scrim: var(--scrim);
   --color-card: var(--card);
+  --color-border: var(--card-border);
   --color-muted: var(--muted);
   --color-sidebar: var(--sidebar);
   --text-2xs: 0.6875rem;
@@ -43,7 +59,7 @@
 
 body {
   transition: background-color 0.2s, color 0.2s;
-  @apply bg-background text-foreground font-sans border-black/6 dark:border-white/6;
+  @apply bg-background text-foreground font-sans border-border;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

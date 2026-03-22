@@ -41,7 +41,7 @@ export default function Sidebar({
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 bg-scrim backdrop-blur-sm"
             onClick={onClose}
           />
           <aside className="relative flex flex-col w-60 z-10">
@@ -62,9 +62,9 @@ function SidebarContent({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="flex flex-col h-full bg-sidebar border-r border-white/5 dark:border-white/5 light:border-black/5">
+    <div className="flex flex-col h-full bg-sidebar border-r border-border/60">
       {/* Logo */}
-      <div className="flex items-center gap-2.5 px-5 h-16 border-b border-white/5 dark:border-white/5 light:border-black/5">
+      <div className="flex items-center gap-2.5 px-5 h-16 border-b border-border/60">
         <Logo />
         <span className="text-base font-semibold text-foreground">
           EcoPulse
@@ -73,7 +73,7 @@ function SidebarContent({ onClose }: { onClose: () => void }) {
 
       {/* Nav Items */}
       <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto scrollbar-hide">
-        <p className="text-3xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-600 light:text-gray-500 px-3 mb-3">
+        <p className="text-3xs font-semibold uppercase tracking-widest text-muted px-3 mb-3">
           Navigation
         </p>
         {navItems.map((item) => {
@@ -86,14 +86,14 @@ function SidebarContent({ onClose }: { onClose: () => void }) {
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
                 active
                   ? 'bg-primary/10 text-primary'
-                  : 'text-gray-400 dark:text-gray-400 light:text-gray-600 hover:text-white dark:hover:text-white light:hover:text-black hover:bg-white/5 dark:hover:bg-white/5 light:hover:bg-black/5'
+                  : 'text-muted hover:text-foreground hover:bg-foreground/5'
               }`}
             >
               <span
                 className={
                   active
                     ? 'text-primary'
-                    : 'text-gray-500 dark:text-gray-500 light:text-gray-400'
+                    : 'text-muted'
                 }
               >
                 {item.icon}
