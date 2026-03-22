@@ -1,6 +1,6 @@
 'use client';
 
-import { useTheme } from '@/lib/theme';
+import { useTheme } from '@/providers/theme';
 import { Moon, Sun } from 'lucide-react';
 
 export default function ThemeToggle() {
@@ -16,4 +16,3 @@ export default function ThemeToggle() {
     </button>
   );
 }
-

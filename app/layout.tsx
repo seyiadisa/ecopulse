@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { ClerkProvider } from '@clerk/nextjs';
-import { ThemeProvider } from '@/lib/theme';
+import { ThemeProvider } from '@/providers/theme';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

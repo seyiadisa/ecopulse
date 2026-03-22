@@ -4,6 +4,7 @@ import { LayoutDashboard, Map, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from '../layout/Logo';
+import { useDashboardSidebar } from '../../providers/sidebar';
 
 const navItems = [
   {
@@ -23,29 +24,23 @@ const navItems = [
   },
 ];
 
-export default function Sidebar({
-  mobileOpen,
-  onClose,
-}: {
-  mobileOpen: boolean;
-  onClose: () => void;
-}) {
+export default function Sidebar() {
+  const { mobileOpen, closeSidebar } = useDashboardSidebar();
+
   return (
     <>
-      {/* Desktop sidebar */}
       <aside className="hidden lg:flex flex-col fixed left-0 top-0 bottom-0 w-60 z-40">
-        <SidebarContent onClose={onClose} />
+        <SidebarContent />
       </aside>
 
-      {/* Mobile overlay */}
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
           <div
             className="fixed inset-0 bg-scrim backdrop-blur-sm"
-            onClick={onClose}
+            onClick={closeSidebar}
           />
           <aside className="relative flex flex-col w-60 z-10">
-            <SidebarContent onClose={onClose} />
+            <SidebarContent />
           </aside>
         </div>
       )}
@@ -53,7 +48,8 @@ export default function Sidebar({
   );
 }
 
-function SidebarContent({ onClose }: { onClose: () => void }) {
+function SidebarContent() {
+  const { closeSidebar } = useDashboardSidebar();
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -82,20 +78,14 @@ function SidebarContent({ onClose }: { onClose: () => void }) {
             <Link
               key={item.href}
               href={item.href}
-              onClick={onClose}
+              onClick={closeSidebar}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all ${
                 active
                   ? 'bg-primary/10 text-primary'
                   : 'text-muted hover:text-foreground hover:bg-foreground/5'
               }`}
             >
-              <span
-                className={
-                  active
-                    ? 'text-primary'
-                    : 'text-muted'
-                }
-              >
+              <span className={active ? 'text-primary' : 'text-muted'}>
                 {item.icon}
               </span>
               {item.label}
@@ -106,4 +96,3 @@ function SidebarContent({ onClose }: { onClose: () => void }) {
     </div>
   );
 }
-
