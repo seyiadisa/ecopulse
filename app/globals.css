@@ -1,26 +1,60 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f9fa;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-border: rgba(10, 10, 10, 0.08);
+  --primary: #10d97a;
+  --primary-dark: #0bb865;
+  --muted: #6b7280;
+  --sidebar: #f3f4f6;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #111111;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --primary: #10d97a;
+  --primary-dark: #0bb865;
+  --muted: #9ca3af;
+  --sidebar: #0d0d0d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-sidebar: var(--sidebar);
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+  --text-3xs: 0.625rem;
+  --text-3xs--line-height: 0.875rem;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  transition: background-color 0.2s, color 0.2s;
+  @apply bg-background text-foreground font-sans border-black/6 dark:border-white/6;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@utility h-screen-minus-header {
+  height: calc(100vh - 4rem);
 }
