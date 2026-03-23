@@ -54,15 +54,15 @@ function SidebarContent() {
 
   return (
     <div className="flex flex-col h-full bg-sidebar border-r border-border/60">
-      {/* Logo */}
-      <div className="flex items-center gap-2.5 px-5 h-16 border-b border-border/60">
-        <Logo />
-        <span className="text-base font-semibold text-foreground">
-          EcoPulse
-        </span>
-      </div>
+      <Link href="/">
+        <div className="flex items-center gap-2.5 px-5 h-16 border-b border-border/60">
+          <Logo />
+          <span className="text-base font-semibold text-foreground">
+            EcoPulse
+          </span>
+        </div>
+      </Link>
 
-      {/* Nav Items */}
       <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto scrollbar-hide">
         <p className="text-3xs font-semibold uppercase tracking-widest text-muted px-3 mb-3">
           Navigation
