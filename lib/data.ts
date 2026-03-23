@@ -1,0 +1,60 @@
+import { CityKey, CityValue } from '@/types';
+
+export const cities: Record<CityKey, CityValue> = {
+  lagos: {
+    id: 'lagos',
+    name: 'Lagos',
+    country: 'Nigeria',
+    openaqId: 404479,
+    lat: 6.440483,
+    lon: 3.406815,
+  },
+  kigali: {
+    id: 'kigali',
+    name: 'Kigali',
+    country: 'Rwanda',
+    openaqId: 313953,
+    lat: -1.936231,
+    lon: 30.077952,
+  },
+  cairo: {
+    id: 'cairo',
+    name: 'Cairo',
+    country: 'Egypt',
+    openaqId: 352828,
+    lat: 31.23378,
+    lon: 30.04102,
+  },
+  accra: {
+    id: 'accra',
+    name: 'Accra',
+    country: 'Ghana',
+    openaqId: 3025581,
+    lat: 5.59389,
+    lon: -0.26877,
+  },
+  antananarivo: {
+    id: 'antananarivo',
+    name: 'Antananarivo',
+    country: 'Madagascar',
+    openaqId: 41726,
+    lat: -18.90848,
+    lon: 47.53751,
+  },
+  dakar: {
+    id: 'dakar',
+    name: 'Dakar',
+    country: 'Senegal',
+    openaqId: 1531944,
+    lat: 14.746475571894893,
+    lon: -17.510440956465402,
+  },
+  addisAbaba: {
+    id: 'addisAbaba',
+    name: 'Addis Ababa',
+    country: 'Ethiopia',
+    openaqId: 9714,
+    lat: 9.058498,
+    lon: 38.761641,
+  },
+};

@@ -1,6 +1,6 @@
 'use client';
 
-import { LayoutDashboard, Map, TrendingUp } from 'lucide-react';
+import { LayoutDashboard, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from '../layout/Logo';
@@ -11,11 +11,6 @@ const navItems = [
     label: 'Dashboard',
     href: '/dashboard',
     icon: <LayoutDashboard size={18} />,
-  },
-  {
-    label: 'Map',
-    href: '/dashboard/map',
-    icon: <Map size={18} />,
   },
   {
     label: 'Trends',
