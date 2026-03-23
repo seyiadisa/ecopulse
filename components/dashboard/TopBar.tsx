@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu, Search } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import ThemeToggle from '../layout/ThemeToggle';
 import UserDisplay from './UserDisplay';
 import { useDashboardSidebar } from '../../providers/sidebar';
@@ -19,17 +19,6 @@ export default function TopBar() {
         >
           <Menu size={20} />
         </button>
-
-        <div className="relative max-w-sm w-full">
-          <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted">
-            <Search size={16} />
-          </div>
-          <input
-            type="text"
-            placeholder="Search sensors, locations..."
-            className="w-full bg-card border border-border text-sm text-foreground placeholder:text-muted rounded-lg pl-9 pr-4 py-2 focus:outline-none focus:border-primary/40 transition-colors"
-          />
-        </div>
       </div>
 
       <div className="flex items-center gap-3 ml-4">
