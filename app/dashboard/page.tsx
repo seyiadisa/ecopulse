@@ -72,18 +72,20 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="flex flex-1 min-h-0">
-        <Map
-          isFetching={results.isFetching}
-          data={results.data}
-          pm25Values={pm25Values}
-          selectedCity={selectedCity}
-          setSelectedCity={setSelectedCity}
-        />
+      <div className="flex flex-1 min-h-0 flex-col lg:flex-row">
+        <div className="flex flex-1 min-h-[45vh] lg:min-h-0">
+          <Map
+            isFetching={results.isFetching}
+            data={results.data}
+            pm25Values={pm25Values}
+            selectedCity={selectedCity}
+            setSelectedCity={setSelectedCity}
+          />
+        </div>
 
-        <div className="w-72 bg-card border-l border-border/60 flex flex-col overflow-y-auto scrollbar-hide">
+        <div className="w-full lg:w-72 bg-card border-t lg:border-t-0 lg:border-l border-border/60 flex flex-col overflow-y-auto scrollbar-hide max-h-[55vh] lg:max-h-none shrink-0">
           {results.isFetching || !results.data ? (
-            <div className="flex items-center justify-center h-full">
+            <div className="flex items-center justify-center h-40 lg:h-full">
               <Loader2 size={24} className="animate-spin" />
             </div>
           ) : (
