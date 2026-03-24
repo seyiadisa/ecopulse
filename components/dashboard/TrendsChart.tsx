@@ -25,8 +25,6 @@ export default function TrendsChart({
   minAQI: number;
   maxAQI: number;
 }) {
-  console.log('Chart data:', chartData);
-
   return (
     <div className="bg-card border border-border rounded-2xl p-4 sm:p-6">
       <div className="flex items-center justify-between mb-6">

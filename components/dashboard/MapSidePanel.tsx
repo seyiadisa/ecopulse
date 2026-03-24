@@ -12,7 +12,6 @@ export default function MapSidePanel({
   data: AQData[];
   timestamp: string;
 }) {
-  console.log(timestamp);
   return (
     <>
       <div className="p-4 border-b border-border/60">
